@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+strongswan_key_added=$(gpg --list-keys | grep DF42C170B34DBA77 &> /dev/null && echo "true" || echo "false")
+nm_strongswan_key_added=$(gpg --list-keys | grep 765FE26C6B467584 &> /dev/null && echo "true" || echo "false")
+strongswan_installed=$(pacman -Qi strongswan &> /dev/null && echo "true" || echo "false")
+
+cat <<EOF
+{
+  "strongswan_key_added": ${strongswan_key_added},
+  "nm_strongswan_key_added": ${nm_strongswan_key_added},
+  "strongswan_installed": ${strongswan_installed}
+}
+EOF

@@ -1,0 +1,7 @@
+---
+- include: desktop.yml
+
+- name: Provision minted system
+  hosts: all
+  roles:
+    - strongswan
