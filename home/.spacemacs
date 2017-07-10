@@ -331,6 +331,10 @@ you should place your code here."
   (setq neo-theme 'nerd)
   (setq neo-show-hidden-files nil)
 
+  (load-library "find-lisp")
+  (setq org-agenda-files
+        (find-lisp-find-files "~/Dropbox/Notes" "\.org$"))
+
   (setq-default
    ;; js2-mode
    js2-basic-offset 2
