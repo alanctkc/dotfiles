@@ -6,3 +6,8 @@
   with_items:
     - git
     - gist
+
+- name: Install git LFS
+  yaourt:
+    name: git-lfs-bin
+    state: present
