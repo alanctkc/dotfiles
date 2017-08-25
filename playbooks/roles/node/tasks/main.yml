@@ -37,6 +37,8 @@
     - tern
     - js-beautify
     - eslint
+    - babel-eslint
+    - eslint-plugin-react
     - gulp
     - yo
     - create-react-app
