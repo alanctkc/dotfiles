@@ -1,4 +1,4 @@
 ---
-- name: Install heroku toolbelt
-  yaourt: name=heroku-toolbelt
+- name: Install heroku CLI
+  yaourt: name=heroku-cli
           state=present

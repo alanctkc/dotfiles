@@ -201,4 +201,4 @@ exec --no-startup-id ~/.i3_local
 
 # Desktop applications
 exec --no-startup-id emacsclient -c ~/Dropbox/Notes -F "((class . \"orgnotes\"))" "$@"
-exec --no-startup-id google-chrome-stable
+exec --no-startup-id wavebox
