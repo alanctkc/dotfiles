@@ -6,3 +6,9 @@
     - qt5-quickcontrols
     - yubico-yubioath-desktop
     - yubikey-manager
+
+- name: Enable pcscd
+  become: yes
+  systemd: name=pcscd
+           enabled=yes
+           state=started
