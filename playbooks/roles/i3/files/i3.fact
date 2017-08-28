@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-docutils_installed=$(pacman -Ss python-docutils | grep installed &> /dev/null && echo "true" || echo "false")
-
-echo "{\"docutils_installed\": ${docutils_installed}}"

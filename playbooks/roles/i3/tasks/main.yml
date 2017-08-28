@@ -1,13 +1,4 @@
 ---
-- name: Install i3 custom facts
-  become: yes
-  copy: src=i3.fact
-        dest=/etc/ansible/facts.d/i3.fact
-        mode=0755
-
-- name: Reload ansible local facts
-  setup: filter=ansible_local
-
 - name: Remove built-in i3lock
   become: yes
   pacman: name=i3lock
@@ -67,16 +58,3 @@
   become: yes
   copy: src=blurlock
         dest=/usr/bin/blurlock
-
-- name: Create systemd service to run screen lock on sleep
-  become: yes
-  copy:
-    src: screenlock@.service
-    dest: /usr/lib/systemd/system/screenlock@.service
-
-- name: Enable screen lock service for current user
-  become: yes
-  file:
-    src: /usr/lib/systemd/system/screenlock@.service
-    dest: "/etc/systemd/system/sleep.target.wants/screenlock@{{ansible_env.USER}}.service"
-    state: link

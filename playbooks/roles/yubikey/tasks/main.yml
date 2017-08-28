@@ -1,13 +1,4 @@
 ---
-- name: Install yubikey custom facts
-  become: yes
-  copy: src=yubikey.fact
-        dest=/etc/ansible/facts.d/yubikey.fact
-        mode=0755
-
-- name: Reload ansible local facts
-  setup: filter=ansible_local
-
 - name: Install desktop Yubico Authenticator
   yaourt: name={{item}}
           state=present
@@ -15,9 +6,3 @@
     - qt5-quickcontrols
     - yubico-yubioath-desktop
     - yubikey-manager
-
-- name: Enable pcscd
-  become: yes
-  systemd: name=pcscd
-           enabled=yes
-           state=started

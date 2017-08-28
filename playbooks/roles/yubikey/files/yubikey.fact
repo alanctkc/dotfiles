@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-pyasn1_installed=$(pacman -Qi python-pyasn1 &> /dev/null && echo "true" || echo "false")
-
-echo "{\"pyasn1_installed\": ${pyasn1_installed}}"
