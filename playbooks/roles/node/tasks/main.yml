@@ -34,6 +34,7 @@
     executable: /bin/bash
     creates: "{{ansible_env.HOME}}/.nvm/versions/node/{{ansible_local.node.default_version}}/bin/{{item}}"
   with_items:
+    - yarn
     - tern
     - js-beautify
     - eslint
