@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -e
-systemctl is-active pcscd || systemctl start pcscd
 password=$(secret-tool lookup ykman oath)
 credential=$(ykman oath --password $password code | rofi -dmenu -i -p "yubikey:" $@)
 if [[ ! -z "${credential// }" ]]

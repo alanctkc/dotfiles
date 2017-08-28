@@ -8,19 +8,13 @@
 - name: Reload ansible local facts
   setup: filter=ansible_local
 
-- name: Remove system pyasn1
-  become: yes
-  pip:
-    name: pyasn1
-    state: absent
-  when: not ansible_local.yubikey.pyasn1_installed
-
 - name: Install desktop Yubico Authenticator
   yaourt: name={{item}}
           state=present
   with_items:
     - qt5-quickcontrols
     - yubico-yubioath-desktop
+    - yubikey-manager
 
 - name: Enable pcscd
   become: yes
