@@ -18,7 +18,7 @@
     follow = keyboard
     sticky_history = yes
     history_length = 20
-    show_indicators = yes
+    show_indicators = no
     line_height = 0
     notification_height = 0
     separator_height = 1
