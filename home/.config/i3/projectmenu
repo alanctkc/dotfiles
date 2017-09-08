@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -e
-path=$(printf '%s\n' ~/Workspaces/*/code/* | rofi -dmenu -i -p "project:" $@)
+shorthand=$(printf '%s\n' ~/Workspaces/*/code/* | cut -d '/' -f 5,7 | rofi -dmenu -i -p "project:" $@)
+parts=(${shorthand//\// })
+path=~/Workspaces/${parts[0]}/code/${parts[1]}
 session=$(echo $(basename $path) | sed -r 's/\./_/g')
 termite -d $path -e "sh -c 'byobu new-session -s $session || byobu attach-session -t $session'"
