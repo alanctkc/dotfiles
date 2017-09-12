@@ -1,0 +1,5 @@
+---
+- name: Install Zoom
+  yaourt:
+    name: zoom
+    state: present

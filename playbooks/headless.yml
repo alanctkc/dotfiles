@@ -22,6 +22,7 @@
     - heroku
     - aws
     - ngrok
+    - hugo
     - jekyll
 
 - name: Configure dev environment

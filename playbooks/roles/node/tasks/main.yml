@@ -45,3 +45,4 @@
     - create-react-app
     - pushstate-server
     - vmd
+    - "@storybook/cli"

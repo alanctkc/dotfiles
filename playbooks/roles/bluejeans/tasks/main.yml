@@ -1,0 +1,5 @@
+---
+- name: Install BlueJeans
+  yaourt:
+    name: bluejeans
+    state: present
